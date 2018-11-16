@@ -17,5 +17,6 @@ RUN mkdir -p ${GOPATH}/src/github.com/id9383 \
     && cd ${GOPATH}/src/github.com/id9383 \
     && git clone https://github.com/id9383/webserver
 
-RUN cd ${GOPATH}/src/github.com/id9383/webserver && make
+RUN cd ${GOPATH}/src/github.com/id9383/webserver && make && make install
 
+RUN cp ${GOPATH}/src/github.com/id9383/webserver/etc/init.d/webserver /etc/init.d
